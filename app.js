@@ -17,16 +17,23 @@ riot.tag('logo', '<div class="logo" name="logo"> <span class="logoTxt">Black Lab
   this.on('update', function() {
 
     var w = window.innerWidth;
+    console.log("w = " + w);
 
 
 
     var h = window.innerHeight;
+    console.log("h = " + h);
 
     if(w >= 610) {
       var mt = h/3;
       txt.style.marginTop = mt + 'px';
     } else {
       var mt = h/5.5;
+      txt.style.marginTop = mt + 'px';
+    }
+
+    if(w < 811 && h < 456) {
+      var mt = h/8;
       txt.style.marginTop = mt + 'px';
     }
 
