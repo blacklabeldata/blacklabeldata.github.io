@@ -17,6 +17,7 @@ select:-moz-focusring * {
 }
 
 body {
+  background-color: #000;
   /*background: url(assets/img/brain-wide-web-01.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -29,16 +30,16 @@ body {
 @font-face {
   font-family: 'impactLabel';
   src:
-  	local('Lovely Font'),
-  	local('Lovely-Font'),
-  	url('./assets/fonts/Impact Label.ttf') 
+  	url('./assets/fonts/Impact Label.ttf')
   	format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Impact Label';
-  src: url('../assets/fonts/Impact Label Reverse.ttf') format('truetype'),
+  font-family: 'impactLabelReversed';
+  src:
+    url('./assets/fonts/Impact Label Reversed.ttf')
+    format('truetype'),
   font-weight: normal;
   font-style: normal;
 }
