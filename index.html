@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <title>Black Label Data</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Black Label Data's Web Page">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico"/>
+
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+
+  <!-- Font Awesome -->
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+
+  <!-- Material Design Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./app.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>html5.addElements('todo')</script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <div id="body-wrap" class="container-fluid">
+
+    <logo></logo>
+
+  </div>
+
+
+  <!-- WebSockets -->
+  <script type="text/javascript">
+    var conn;
+
+    conn = new WebSocket('ws://' + window.location.host + '/ws');
+    // console.log('conn = ');
+    // console.log(conn);
+    conn.onopen = function() { // evt if needed
+      console.log('Socket opened.');
+    };
+    conn.onclose = function() {
+      console.log('Socket closed.');
+    };
+    conn.onmessage = function(evt) {
+      var data = JSON.parse(evt.data);
+      console.log(data);
+      // if (data.MsgType === 'scanList') {
+      //   scanList = data.MsgBody;
+      // }
+      // console.log("UPDATING scanList: ");
+      // console.log(scanList);
+      //
+      // riot.update('list', { 'scanList': scanList})
+    };
+
+  </script>
+
+  <!-- include riot.js -->
+  <script src="assets/riot.min.js"></script>
+
+  <!-- include riot tags (these are pre-compiled into one file)-->
+  <script src="app.js"></script>
+
+  <!-- mount tags -->
+  <script>
+    riot.mount('*')
+  </script>
+
+
+  <!-- GSAP -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+
+</body>
+
+</html>
