@@ -1,4 +1,4 @@
-riot.tag('footer', '<div class="footer"> <span class="bold"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; margin-top: 10%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .bold , [riot-tag="footer"] .bold { font-size: 1.6rem; letter-spacing: 3px; }', function(opts) {
+riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; margin-top: 10%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .info , [riot-tag="footer"] .info { font-size: 1.2rem; letter-spacing: 3px; } @media screen and (max-width: 364px) { footer .info , [riot-tag="footer"] .info { font-size: 0.8rem; } }', function(opts) {
 
 
 });
@@ -16,13 +16,21 @@ riot.tag('logo', '<div class="logo" name="logo"> <span class="logoTxt">Black Lab
 
   this.on('update', function() {
 
+    var w = window.innerWidth;
+    console.log("w: " + w);
 
 
 
     var h = window.innerHeight;
 
-    var mt = h/3;
-    txt.style.marginTop = mt + 'px';
+    if(w >= 532) {
+      var mt = h/3;
+      txt.style.marginTop = mt + 'px';
+    } else {
+      var mt = h/5;
+      txt.style.marginTop = mt + 'px';
+    }
+
 
   });
 
