@@ -26,7 +26,7 @@ riot.tag('logo', '<div class="logo" name="logo"> <span class="logoTxt">Black Lab
       var mt = h/3;
       txt.style.marginTop = mt + 'px';
     } else {
-      var mt = h/5.5;
+      var mt = h/6.5;
       txt.style.marginTop = mt + 'px';
     }
 
