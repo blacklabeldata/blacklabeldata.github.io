@@ -1,4 +1,4 @@
-riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; margin-top: 10%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .info , [riot-tag="footer"] .info { font-size: 1.2rem; letter-spacing: 3px; } @media screen and (max-width: 364px) { footer .info , [riot-tag="footer"] .info { font-size: 0.8rem; } }', function(opts) {
+riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; margin-top: 8%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .info , [riot-tag="footer"] .info { font-size: 1.2rem; letter-spacing: 3px; }', function(opts) {
 
 
 });
