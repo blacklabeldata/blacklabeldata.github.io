@@ -1,42 +1,95 @@
-riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; margin-top: 10%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .info , [riot-tag="footer"] .info { font-size: 1.2rem; letter-spacing: 3px; }', function(opts) {
+riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata.io </span> </div>', 'footer , [riot-tag="footer"] { width: 100%; text-align: center; position: fixed; bottom: 30%; font-family: monospace; font-size: 1.4rem; color: #fff; } footer .info , [riot-tag="footer"] .info { font-size: 1.1rem; letter-spacing: 3px; opacity: 0; }', function(opts) {
 
 
 });
 
-riot.tag('logo', '<div class="logo" name="logo"> <span class="logoTxt">Black Label Data</span> <div class="ani"> <span>B</span> <span>l</span> <span>a</span> <span>c</span> <span class="eow">k</span> <span>L</span> <span>a</span> <span>b</span> <span>e</span> <span class="eow">l</span> <span>D</span> <span>a</span> <span>t</span> <span>a</span> </div> </div>', 'logo , [riot-tag="logo"] { width: 100%; text-align: center; } logo .logo , [riot-tag="logo"] .logo { font-family: "impactLabel"; font-size: 5rem; margin-left: auto; margin-right: auto; } logo .ani , [riot-tag="logo"] .ani { display: none; } logo .ani span , [riot-tag="logo"] .ani span { background-color: #fff; float:left; } logo .space , [riot-tag="logo"] .space { margin-right: 0; } logo .logoTxt , [riot-tag="logo"] .logoTxt { background-color: #fff; } @media all and (max-width: 634px) { logo body , [riot-tag="logo"] body { background: #ccc; } }', function(opts) {
+riot.tag('logo', '<div class="logo" name="logo"> <span id="logoTxt" class="logoTxt" name="logoTxt"></span> <span name="nextTxt" class="nextTxt"></span> </div>', 'logo , [riot-tag="logo"] { width: 100%; text-align: center; } logo .logo , [riot-tag="logo"] .logo { font-family: "impactLabel"; font-size: 5rem; margin-left: auto; margin-right: auto; } logo .logoTxt , [riot-tag="logo"] .logoTxt { background-color: #fff; } logo .nextTxt , [riot-tag="logo"] .nextTxt { background-color: #fff; } }', function(opts) {
   var self = this;
 
-  var txt = this.logo
+
+  var logo = this.logo;
+
+  var logoTxt = this.logoTxt;
+  var nextTxt = this.nextTxt;
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+  var fadeIn = function() {
+    var j = 0;
+
+    var fi = setInterval( function(){
+      var info = document.getElementsByClassName('info');
+
+      if(j >= 1) {
+        clearInterval(fi);
+      }
+      info[0].style.opacity = j;
+      j = j+0.01;
+
+    }, 50);
+  }
+
+  this.on('mount', function() {
+
+    var str = "Black Label Data";
+    var i = 0;
+
+    var inc = setInterval( function() {
+
+
+
+      logoTxt.innerHTML += str[i];
+      i++;
+      if(i === str.length) {
+        clearInterval(inc);
+        fadeIn();
+      }
+    }, 180);
+
+
+
+
+
+
+
+
+
+  });
 
   this.on('update', function() {
 
     var w = window.innerWidth;
-    console.log("w = " + w);
+
 
 
 
     var h = window.innerHeight;
-    console.log("h = " + h);
 
-    if(w >= 610) {
+
+    if(w >= 610) { // Bigger Screen
       var mt = h/3;
-      txt.style.marginTop = mt + 'px';
-    } else {
+      logo.style.marginTop = mt + 'px';
+    } else { // Portrait Mode
       var mt = h/5.5;
-      txt.style.marginTop = mt + 'px';
+      logo.style.marginTop = mt + 'px';
     }
 
     if(w < 811 && h < 456) {
       var mt = h/8;
-      txt.style.marginTop = mt + 'px';
+      logo.style.marginTop = mt + 'px';
     }
-
 
   });
 
