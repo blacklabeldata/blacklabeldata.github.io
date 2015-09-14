@@ -56,7 +56,7 @@ riot.tag('logo', '<div class="logo" name="logo"> <span id="logoTxt" class="logoT
         clearInterval(inc);
         fadeIn();
       }
-    }, 180);
+    }, 160);
 
 
 
