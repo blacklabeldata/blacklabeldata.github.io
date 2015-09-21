@@ -40,6 +40,8 @@ riot.tag('header', '<div id="headWrap"> <div class="logo" name="logo"> <span id=
     if(w <= 1000) { // "Black Label Data" won't fit
       logoTxt.innerHTML = 'BLD';
       email.style.marginTop = '5px';
+      email.style.fontSize = '0.8rem';
+      email.style.marginRight = '15px';
     }
 
 
