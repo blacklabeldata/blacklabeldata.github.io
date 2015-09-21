@@ -37,6 +37,11 @@ riot.tag('header', '<div id="headWrap"> <div class="logo" name="logo"> <span id=
 
   this.on('update', function() {
 
+    if(w <= 1000) { // "Black Label Data" won't fit
+      logoTxt.innerHTML = 'BLD';
+      email.style.marginTop = '5px';
+    }
+
 
 
 
@@ -151,4 +156,9 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
   };
 
   
+});
+
+riot.tag('pitch', '<div name="pitch" class="pitch"> <p> Do you like cities? </p> </div>', function(opts) {
+
+
 });
