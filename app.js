@@ -113,7 +113,6 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
 
           if(w < 1000) { // smaller Screen
             introTxt.innerHTML = 'BLD';
-            email.style.marginTop = '5px';
           }
         }
 
@@ -131,6 +130,12 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
 
       var hw = document.getElementById('headWrap');
       fadeIn(hw);
+      hw.style.backgroundColor = '#000';
+
+      var revealContent = setTimeout( function() {
+        var pitch = document.getElementById('pitch');
+        fadeIn(pitch);
+      }, 500);
 
     }, 5000);
 
@@ -160,7 +165,7 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
   
 });
 
-riot.tag('pitch', '<div name="pitch" class="pitch"> <p> Do you like cities? </p> </div>', function(opts) {
+riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> <div class="odd"> You want to follow your yellow brick road. </div> <div class="even"> Not build it. </div> <div class="odd"> We want to expedite your adventures. </div> <div class="even"> We can be your yellow brick road. </div> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 170px; padding: 30px; color: #DDD; opacity: 0; } pitch .pitch div , [riot-tag="pitch"] .pitch div { height: 500px; } pitch .odd , [riot-tag="pitch"] .odd { } pitch .even , [riot-tag="pitch"] .even { text-align: right; }', function(opts) {
 
 
 });
