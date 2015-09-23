@@ -165,7 +165,7 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
   
 });
 
-riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> </div> <div name="hook" class="hook"> <p> If building the tools to analyze your data is not the best use of your talent, get in touch with us. </p> <p class="mainhook"> We&#8217;d love to help you <br> Do what you do best. </p> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 180px; padding: 10px; font-size: 8rem; font-family: "bricks"; color: #fff; opacity: 0; text-align: left; } pitch .hook , [riot-tag="pitch"] .hook { opacity: 0; margin-top: 0; padding: 60px; font-size: 3rem; font-family: impactLabelReversed; color: #DDD; } pitch .hook p , [riot-tag="pitch"] .hook p { padding: 60px; } pitch .mainhook , [riot-tag="pitch"] .mainhook { font-size: 4rem; text-align: center; }', function(opts) {
+riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> </div> <div name="hook" class="hook"> <p> If building the tools to analyze your data is not the best use of your talent, get in touch with us. </p> <p class="mainhook"> We&#8217;d love to help you <br> Do what you do best. </p> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 180px; padding: 10px; font-size: 8rem; font-family: "bricks"; color: #fff; opacity: 0; text-align: left; } pitch .hook , [riot-tag="pitch"] .hook { opacity: 0; margin-top: 180px; font-size: 3rem; font-family: impactLabelReversed; color: #DDD; } pitch .hook p , [riot-tag="pitch"] .hook p { padding: 60px; } pitch .mainhook , [riot-tag="pitch"] .mainhook { font-size: 4rem; text-align: center; }', function(opts) {
 
     var fadeIn = function(tgt) {
       var j = 0;
@@ -225,6 +225,7 @@ riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> </div> <div name=
 
     var finish = setTimeout(function() {
       pitch.style.display = "none";
+      window.scrollTo(0, 0);
       fadeIn(hook);
     }, 20000);
 
