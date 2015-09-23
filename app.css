@@ -39,7 +39,24 @@ body {
   font-family: 'impactLabelReversed';
   src:
     url('./assets/fonts/Impact Label Reversed.ttf')
-    format('truetype'),
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bricks';
+  src:
+  	url('./assets/fonts/bricks.ttf')
+  	format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bricks';
+  src:
+    url('./assets/fonts/WOVEout.TTF')
+    format('truetype');
   font-weight: normal;
   font-style: normal;
 }

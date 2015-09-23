@@ -165,7 +165,68 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
   
 });
 
-riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> <div class="odd"> You want to follow your yellow brick road. </div> <div class="even"> Not build it. </div> <div class="odd"> We want to expedite your adventures. </div> <div class="even"> We can be your yellow brick road. </div> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 170px; padding: 30px; color: #DDD; opacity: 0; } pitch .pitch div , [riot-tag="pitch"] .pitch div { height: 500px; } pitch .odd , [riot-tag="pitch"] .odd { } pitch .even , [riot-tag="pitch"] .even { text-align: right; }', function(opts) {
+riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> </div> <div name="hook" class="hook"> <p> If building the tools to analyze your data is not the best use of your talent, get in touch with us. </p> <p class="mainhook"> We&#8217;d love to help you <br> Do what you do best. </p> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 180px; padding: 10px; font-size: 8rem; font-family: "bricks"; color: #fff; opacity: 0; text-align: left; } pitch .hook , [riot-tag="pitch"] .hook { opacity: 0; margin-top: 0; padding: 60px; font-size: 3rem; font-family: impactLabelReversed; color: #DDD; } pitch .hook p , [riot-tag="pitch"] .hook p { padding: 60px; } pitch .mainhook , [riot-tag="pitch"] .mainhook { font-size: 4rem; text-align: center; }', function(opts) {
+
+    var fadeIn = function(tgt) {
+      var j = 0;
+
+      var fi = setInterval( function(){
+
+        if(j >= 1) {
+          clearInterval(fi);
+        }
+        tgt.style.opacity = j;
+        j = j+0.01;
+
+      }, 10);
+    }
+
+    var pitch = this.pitch;
+    var hook = this.hook;
+
+    var p = 'You want to follow your yellow brick road, not build it yourself. We want to help expedite your adventures.';
+
+    var ps = p.split(" ")
+
+    var k = 0;      // iterator
+    var ml = 200;  // margin left
+    var w = window.innerWidth
+    var inc = 100; // increment
+
+    var t = 400; // time
+    var c = 255; // color
+
+    var wait = setTimeout( function() {
+
+      var walk = setInterval( function() {
 
 
+
+
+
+
+
+        pitch.innerHTML += '<div style="margin-left: ' + ml + 'px; color: rgba(255,255,' + c + ',1)">' + ps[k] + '</div>';
+
+        k++;
+        ml += inc;
+        c -= 14;
+        if(ml > w-500 || ml < 200) {
+          inc = -inc;
+        }
+        if(k === ps.length) {
+          clearInterval(walk);
+        }
+
+
+      }, t);
+
+    }, 6600);
+
+    var finish = setTimeout(function() {
+      pitch.style.display = "none";
+      fadeIn(hook);
+    }, 20000);
+
+  
 });
