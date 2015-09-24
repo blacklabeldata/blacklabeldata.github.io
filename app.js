@@ -3,7 +3,7 @@ riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata
 
 });
 
-riot.tag('header', '<div id="headWrap"> <div class="logo" name="logo"> <span id="logoTxt" class="logoTxt" name="logoTxt">Black Label Data</span> </div> <div class="email" name="email"> info@blacklabeldata.io </div> </div>', 'header , [riot-tag="header"] { width: 100%; position: fixed; left: 0; top: 0; z-index: 999; } header .logo , [riot-tag="header"] .logo { font-family: "impactLabel"; font-size: 4rem; text-align: left; } header .logoTxt , [riot-tag="header"] .logoTxt { background-color: #fff; margin-left: 30px; } header .email , [riot-tag="header"] .email { font-size: 1.1rem; font-family: monospace; color: #fff; letter-spacing: 3px; margin-top: -34px; margin-right: 30px; float: right; } header #headWrap , [riot-tag="header"] #headWrap { opacity: 0; padding-top: 15px; } }', function(opts) {
+riot.tag('header', '<div id="headWrap"> <div class="logo" name="logo"> <span id="logoTxt" class="logoTxt" name="logoTxt">Black Label Data</span> </div> <div class="email" name="email"> <a href="mailto:info@blacklabeldata.io">info@blacklabeldata.io</a> </div> </div>', 'header , [riot-tag="header"] { width: 100%; position: fixed; left: 0; top: 0; z-index: 999; } header .logo , [riot-tag="header"] .logo { font-family: "impactLabel"; font-size: 4rem; text-align: left; } header .logoTxt , [riot-tag="header"] .logoTxt { background-color: #fff; margin-left: 30px; } header .email , [riot-tag="header"] .email { font-size: 1.1rem; font-family: monospace; color: #fff; letter-spacing: 3px; margin-top: -34px; margin-right: 30px; float: right; } header .email a , [riot-tag="header"] .email a { color: #fff; } header #headWrap , [riot-tag="header"] #headWrap { opacity: 0; padding-top: 15px; } }', function(opts) {
   var self = this;
 
 
@@ -165,7 +165,7 @@ riot.tag('intro', '<div class="intro" name="intro"> <span id="introTxt" class="i
   
 });
 
-riot.tag('pitch', '<div name="pitch" class="pitch" id="pitch"> </div> <div name="hook" class="hook"> <p> If building the tools to analyze your data is not the best use of your talent, get in touch with us. </p> <p class="mainhook"> We&#8217;d love to help you <br> Do what you do best. </p> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 180px; padding: 10px; font-size: 7rem; font-family: "bricks"; color: #fff; opacity: 0; text-align: left; } pitch .hook , [riot-tag="pitch"] .hook { opacity: 0; margin-top: 180px; font-size: 2rem; font-family: impactLabelReversed; color: #DDD; } pitch .hook p , [riot-tag="pitch"] .hook p { padding: 60px; } pitch .mainhook , [riot-tag="pitch"] .mainhook { font-size: 3rem; text-align: center; }', function(opts) {
+riot.tag('pitch', '<div name="hook" class="hook"> <p> If building the tools to analyze your data is not the best use of your talent, get in touch with us. </p> <p class="mainhook"> We&#8217;d love to help you <br> Do what you do best. </p> </div> <div name="pitch" class="pitch" id="pitch"> </div>', 'pitch , [riot-tag="pitch"] { } pitch .pitch , [riot-tag="pitch"] .pitch { margin-top: 180px; padding: 10px; font-size: 7rem; font-family: "bricks"; color: #fff; opacity: 0; text-align: left; } pitch .hook , [riot-tag="pitch"] .hook { margin-top: 180px; font-size: 2rem; font-family: timeburner; color: #DDD; } pitch .hook p , [riot-tag="pitch"] .hook p { padding: 60px; } pitch .mainhook , [riot-tag="pitch"] .mainhook { font-size: 3rem; text-align: center; }', function(opts) {
 
     var fadeIn = function(tgt) {
       var j = 0;
