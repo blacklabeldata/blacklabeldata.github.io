@@ -61,6 +61,15 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'timeburner';
+  src:
+    url('./assets/fonts/timeburner_regular.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*@font-face {
   font-family: 'Proxima Nova Extrabold';
   src: url('../assets/fonts/proxima_nova_extrabold-webfont.eot');
