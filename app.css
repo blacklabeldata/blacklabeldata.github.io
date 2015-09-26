@@ -70,6 +70,34 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'SansSerifFLF';
+  src:
+    url('./assets/fonts/SansSerifFLF.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'quango';
+  src:
+    url('./assets/fonts/Quango.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'trench';
+  src:
+    url('./assets/fonts/trench100free.otf')
+    format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /*@font-face {
   font-family: 'Proxima Nova Extrabold';
   src: url('../assets/fonts/proxima_nova_extrabold-webfont.eot');
