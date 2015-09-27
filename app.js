@@ -3,7 +3,7 @@ riot.tag('footer', '<div class="footer"> <span class="info"> info@blacklabeldata
 
 });
 
-riot.tag('header', '<div class="logo" name="logo"> <span id="logoTxt" class="logoTxt" name="logoTxt"> <a href="#">Black Label Data</a> </span> <span class="email" name="email"> <a href="mailto:info@blacklabeldata.io">info@blacklabeldata.io</a> </span> </div>', 'header , [riot-tag="header"] { height: 182px; width: 100%; position: fixed; left: 0; top: 0; z-index: 999; background-color: #000; } header .logo , [riot-tag="header"] .logo { font-family: "impactLabel"; font-size: 4rem; text-align: left; padding: 50px 60px; width: 100%; height: 8rem; } header .logoTxt , [riot-tag="header"] .logoTxt { background-color: #fff; margin: 50px 0 0 30px; } header .logoTxt a , [riot-tag="header"] .logoTxt a { color: #000; } header .email , [riot-tag="header"] .email { font-size: 1.1rem; font-family: monospace; color: #fff; letter-spacing: 3px; margin-top: 28px; margin-right: 120px; float: right; } header .email a , [riot-tag="header"] .email a { color: #fff; } }', function(opts) {
+riot.tag('header', '<div class="logo" name="logo"> <span id="logoTxt" class="logoTxt" name="logoTxt"> <a href="#">Black Label Data</a> </span> </div> <div class="email" onclick="{ sendEmail }"> <span class="emailTxt">email us</span> <i class="material-icons">email</i> </div>', 'header , [riot-tag="header"] { height: 182px; width: 100%; position: fixed; left: 0; top: 0; z-index: 999; background-color: #000; } header .logo , [riot-tag="header"] .logo { display: inline-block; font-family: "impactLabel"; font-size: 4rem; text-align: left; width: 80%; height: 8rem; margin-top: 50px; } header .logoTxt , [riot-tag="header"] .logoTxt { background-color: #fff; margin-left: 60px; } header .logoTxt a , [riot-tag="header"] .logoTxt a { color: #000; } header .email , [riot-tag="header"] .email { float: right; width: 20%; color: #fff; background-color: #000; font-family: SansSerifFLF; font-size: 2rem; text-align: center; margin-top: 65px; cursor: pointer; } header .email i , [riot-tag="header"] .email i { font-size: 2rem; margin: 0 60px 0 0; position: relative; top: 5px; left: 5px; } header .emailTxt , [riot-tag="header"] .emailTxt { } }', function(opts) {
   var self = this;
 
 
@@ -13,6 +13,16 @@ riot.tag('header', '<div class="logo" name="logo"> <span id="logoTxt" class="log
   var nextTxt = this.nextTxt;
   var email = this.email;
   var mt = '0';
+
+  this.sendEmail = function() {
+    var p1 = 'info';
+    var p2 = '@';
+    var p3 = 'blacklabeldata';
+    var p4 = '.io';
+    var addr = p1+p2+p3+p4
+    var subject = 'Info Request from blacklabeldata.io';
+    window.location.href = 'mailto:' + addr + '?subject=' + subject;
+  }.bind(this);
 
   var w = window.innerWidth;
   var h = window.innerHeight;
@@ -65,7 +75,7 @@ riot.tag('header', '<div class="logo" name="logo"> <span id="logoTxt" class="log
   
 });
 
-riot.tag('home', '<div name="content" class="content"> <span class="vision"> You have the <span class="skyblue">vision.</span> </span> <span class="bricks"> We have the <span class="yellow">bricks.</span> </span> <a href="#form"> <button class="hook" type="button" name="button"> Click to start building your <span class="emerald">Wonderland.</span> </button> </a> </div> <form onsubmit="{ contact }" class="form"> <a id="form"></a> <input name="contactName" onkeyup="{ edit }" class="input"> <button __disabled="{ !text }">Add #{ items.length + 1 }</button> </form> ', 'home , [riot-tag="home"] { } home .content , [riot-tag="home"] .content { padding: 60px 0; margin: 180px 0 30px 0; font-size: 3rem; font-family: quango; background-color: #333; color: #ddd; text-align: center; } home .content span , [riot-tag="home"] .content span { width: 50%; padding: 60px 0 80px 0; } home .vision , [riot-tag="home"] .vision { float: left; } home .skyblue , [riot-tag="home"] .skyblue { color: #87CEEB; } home .bricks , [riot-tag="home"] .bricks { float: right; } home .yellow , [riot-tag="home"] .yellow { color: #FFDF00; } home .emerald , [riot-tag="home"] .emerald { color: #55D43F; } home .hook , [riot-tag="home"] .hook { font-size: 3rem; text-align: center; margin-bottom: 60px; background-color: transparent; font-family: Quango; color: #ddd; padding: 10px; border: none; } home .hook:hover , [riot-tag="home"] .hook:hover { border-left: 1px solid #666; border-top: 1px solid #666; background-color: #222; cursor: pointer; } home .hook:active , [riot-tag="home"] .hook:active { background-color: #111; border: none; border-bottom: 1px solid #666; border-right: 1px solid #666; } home .form , [riot-tag="home"] .form { height: 700px; } }', function(opts) {
+riot.tag('home', '<div name="content" class="content"> <span class="vision"> You have the <span class="skyblue">vision.</span> </span> <span class="bricks"> We have the <span class="yellow">bricks.</span> </span> <a href="#form"> <button class="hook" type="button" name="button"> Click to start building your <span class="emerald">Wonderland.</span> </button> </a> </div> <form onsubmit="{ contact }" class="form"> <a id="form"></a> <input name="contactName" onkeyup="{ edit }" class="input"> <button __disabled="{ !text }">Add #{ items.length + 1 }</button> </form> ', 'home , [riot-tag="home"] { } home .content , [riot-tag="home"] .content { padding: 60px 0; margin: 180px 0 30px 0; font-size: 3rem; font-family: SansSerifFLF; background-color: #333; color: #ddd; text-align: center; } home .content span , [riot-tag="home"] .content span { width: 50%; padding: 60px 0 80px 0; } home .vision , [riot-tag="home"] .vision { float: left; } home .skyblue , [riot-tag="home"] .skyblue { color: #87CEEB; } home .bricks , [riot-tag="home"] .bricks { float: right; } home .yellow , [riot-tag="home"] .yellow { color: #FFDF00; } home .emerald , [riot-tag="home"] .emerald { color: #55D43F; } home .hook , [riot-tag="home"] .hook { font-size: 3rem; text-align: center; margin-bottom: 60px; background-color: transparent; font-family: SansSerifFLF; color: #ddd; padding: 10px; border: none; } home .hook:hover , [riot-tag="home"] .hook:hover { border-left: 1px solid #666; border-top: 1px solid #666; background-color: #222; cursor: pointer; } home .hook:active , [riot-tag="home"] .hook:active { background-color: #111; border: none; border-bottom: 1px solid #666; border-right: 1px solid #666; } home .form , [riot-tag="home"] .form { height: 700px; } }', function(opts) {
 
     var fadeIn = function(tgt) {
       var j = 0;
