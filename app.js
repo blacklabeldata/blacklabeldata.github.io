@@ -75,7 +75,28 @@ riot.tag('header', '<div class="logo" name="logo"> <span id="logoTxt" class="log
   
 });
 
-riot.tag('home', '<div name="content" class="content"> <span class="vision"> You have the <span class="skyblue">vision.</span> </span> <span class="bricks"> We have the <span class="yellow">bricks.</span> </span> <a href="#form"> <button class="hook" type="button" name="button"> Click to start building your <span class="emerald">Wonderland.</span> </button> </a> </div> <form onsubmit="{ contact }" class="form"> <a id="form"></a> <input name="contactName" onkeyup="{ edit }" class="input"> <button __disabled="{ !text }">Add #{ items.length + 1 }</button> </form> ', 'home , [riot-tag="home"] { } home .content , [riot-tag="home"] .content { padding: 60px 0; margin: 180px 0 30px 0; font-size: 3rem; font-family: SansSerifFLF; background-color: #333; color: #ddd; text-align: center; } home .content span , [riot-tag="home"] .content span { width: 50%; padding: 60px 0 80px 0; } home .vision , [riot-tag="home"] .vision { float: left; } home .skyblue , [riot-tag="home"] .skyblue { color: #87CEEB; } home .bricks , [riot-tag="home"] .bricks { float: right; } home .yellow , [riot-tag="home"] .yellow { color: #FFDF00; } home .emerald , [riot-tag="home"] .emerald { color: #55D43F; } home .hook , [riot-tag="home"] .hook { font-size: 3rem; text-align: center; margin-bottom: 60px; background-color: transparent; font-family: SansSerifFLF; color: #ddd; padding: 10px; border: none; } home .hook:hover , [riot-tag="home"] .hook:hover { border-left: 1px solid #666; border-top: 1px solid #666; background-color: #222; cursor: pointer; } home .hook:active , [riot-tag="home"] .hook:active { background-color: #111; border: none; border-bottom: 1px solid #666; border-right: 1px solid #666; } home .form , [riot-tag="home"] .form { height: 700px; } }', function(opts) {
+riot.tag('home', '<div name="content" class="content"> <span class="vision"> You have the <span class="skyblue">vision.</span> </span> <span class="bricks"> We have the <span class="yellow">bricks.</span> </span> <a href="#form"> <button class="hook" type="button" name="button"> Click to start building your <span class="emerald">Wonderland.</span> </button> </a> </div> <div class="manifesto"> <div class="tri"> </div> <div class="tri"> </div> <div class="tri"> </div> </div> <a id="form"></a> <form onsubmit="{ contact }" class="form"> <h1>Contact Us</h1> <div class="formGroup"> <label for="name">Name</label> <input id="name" name="name" required> </div> <div class="formGroup"> <label for="org">Org</label> <input id="org" name="org"> </div> <div class="formGroup"> <label for="email">Email</label> <input id="email" name="email" type="email" required> </div> <div class="formGroup"> <label for="msg">Msg</label> <textarea id="msg" name="msg" required></textarea> </div> <div class="formGroup"> <button> <span class="formBtnTxt">Send</span> <i class="material-icons">send</i> </button> </div> </form> ', 'home , [riot-tag="home"] { } home .content , [riot-tag="home"] .content { padding: 60px 0; margin-top: 180px; font-size: 3rem; font-family: SansSerifFLF; background-color: #333; color: #ddd; text-align: center; } home .content span , [riot-tag="home"] .content span { width: 50%; padding: 60px 0 80px 0; } home .vision , [riot-tag="home"] .vision { float: left; } home .skyblue , [riot-tag="home"] .skyblue { color: #87CEEB; } home .bricks , [riot-tag="home"] .bricks { float: right; } home .yellow , [riot-tag="home"] .yellow { color: #FFDF00; } home .emerald , [riot-tag="home"] .emerald { color: #55D43F; } home .hook , [riot-tag="home"] .hook { font-size: 3rem; text-align: center; margin-bottom: 60px; background-color: transparent; font-family: SansSerifFLF; color: #ddd; padding: 10px; border: none; } home .hook:hover , [riot-tag="home"] .hook:hover { border-left: 1px solid #666; border-top: 1px solid #666; background-color: #222; cursor: pointer; } home .hook:active , [riot-tag="home"] .hook:active { background-color: #111; border: none; border-bottom: 1px solid #666; border-right: 1px solid #666; } home .manifesto , [riot-tag="home"] .manifesto { margin-top: 10px; background-color: #ccc; } home .tri , [riot-tag="home"] .tri { height: 500px; width: 33%; display: inline-block; } home .form , [riot-tag="home"] .form { margin-top: 10px; padding: 30px; background-color: #333; color: #ddd; text-align: center; font-family: SansSerifFLF; } home .form h1 , [riot-tag="home"] .form h1 { margin-top: 30px; margin-bottom: 30px; } home .formGroup , [riot-tag="home"] .formGroup { width: 100%; min-height: 50px; margin: 20px 0; } home label , [riot-tag="home"] label { display: inline-block; width: 10%; height: 30px; text-align: right; margin-right: 10px; } home input , [riot-tag="home"] input { display: inline; width: 60%; height: 30px; } home textarea , [riot-tag="home"] textarea { display: inline; width: 60%; height: 90px; } home .form button , [riot-tag="home"] .form button { padding: 0 15px 12px; background-color: #ddd; color: #333; float: right; margin-right: 14%; } home .form i , [riot-tag="home"] .form i { position: relative; top: 7px; left: 5px; } }', function(opts) {
+
+  this.contact = function() {
+    var p1 = 'info';
+    var p2 = '@';
+    var p3 = 'blacklabeldata';
+    var p4 = '.io';
+    var addr = p1+p2+p3+p4
+
+    var name = this.name;
+    var org = this.org;
+    var email = this.email;
+    var msg = this.msg;
+
+    var subject = 'Contact Request from ' + name + ' @ ' + 'org';
+
+
+    name = '';
+    org = '';
+    email = '';
+    msg = '';
+  }.bind(this);
 
     var fadeIn = function(tgt) {
       var j = 0;
