@@ -11,13 +11,15 @@ select:-moz-focusring {
   color:transparent;
   text-shadow:0 0 0 #000; /* your normal text color here */
 }
-select:-moz-focusring * {
-  color:#000; /* your normal text color here */
+/*select:-moz-focusring * {
+  color:#000;
   text-shadow:none;
-}
+}*/
 
 body {
   background-color: #fdfdfd;
+  padding: 0;
+  margin: 0;
   /*background: url(assets/img/brain-wide-web-01.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
