@@ -12,19 +12,18 @@
   <!-- favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.ico"/>
 
-  <!--CDN link for the latest TweenMax-->
-  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
-
-  <!-- Bootstrap -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-
   <!-- Font Awesome -->
-  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- Droid Sans -->
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
   <!-- Material Design Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
   <link rel="stylesheet" type="text/css" href="./app.css">
+  <link rel="stylesheet" type="text/css" href="./tags.css">
+
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
@@ -36,53 +35,37 @@
 
 <body>
 
-  <div id="body-wrap" class="container-fluid">
-
-    <!-- <intro></intro> -->
-    <header></header>
-    <home></home>
-    <!-- <pitch></pitch> -->
-    <!-- <footer></footer> -->
-
-  </div>
-
-
-  <!-- WebSockets -->
-  <script type="text/javascript">
-    var conn;
-
-    conn = new WebSocket('ws://' + window.location.host + '/ws');
-    // console.log('conn = ');
-    // console.log(conn);
-    conn.onopen = function() { // evt if needed
-      console.log('Socket opened.');
-    };
-    conn.onclose = function() {
-      console.log('Socket closed.');
-    };
-    conn.onmessage = function(evt) {
-      var data = JSON.parse(evt.data);
-      console.log(data);
-      // if (data.MsgType === 'scanList') {
-      //   scanList = data.MsgBody;
-      // }
-      // console.log("UPDATING scanList: ");
-      // console.log(scanList);
-      //
-      // riot.update('list', { 'scanList': scanList})
-    };
+  <top></top>
+  <content></content>
 
   </script>
 
   <!-- include riot.js -->
-  <script src="assets/riot.min.js"></script>
+  <!-- <script src="assets/riot.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/riot/2.3/riot.min.js"></script>
 
   <!-- include riot tags (these are pre-compiled into one file)-->
-  <script src="app.js"></script>
+  <script src="tags.js"></script>
+
+  <!-- <script src="app.js"></script> -->
 
   <!-- mount tags -->
   <script>
-    riot.mount('*')
+    var menu = [
+      {"name": "home", "hash": "home", "active": false},
+      {"name": "blog", "hash": "blog", "active": false}
+    ];
+
+    // assign active tab
+    var hash = location.hash
+    for(var i = 0; i < menu.length; i++) {
+      if('#'+menu[i].hash == hash) {
+        menu[i].active = true
+      }
+    }
+
+    riot.mount('*', {menu: menu});
+
   </script>
 
 </body>

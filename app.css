@@ -20,6 +20,7 @@ body {
   background-color: #fdfdfd;
   padding: 0;
   margin: 0;
+  font-family: 'Droid Sans', sans-serif;
   /*background: url(assets/img/brain-wide-web-01.svg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -27,6 +28,14 @@ body {
   background-size: cover;
   overflow-x: hidden; */   /* for smooth right drawer */
 
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  padding-top: 100px;
 }
 
 @font-face {
@@ -45,23 +54,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'bricks';
-  src:
-  	url('./assets/fonts/bricks.ttf')
-  	format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'bricks';
-  src:
-    url('./assets/fonts/WOVEout.TTF')
-    format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'timeburner';
