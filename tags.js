@@ -1,10 +1,6 @@
-riot.tag2('blog', '<div class="blogContent"><post1></post1></div>', '', '', function(opts) {
-var self;
+riot.tag2('blog', '<a href="http://blog.arkham.io"></a>')
 
-self = this;
-});
-
-riot.tag2('content', '<div id="content" class="flex"><home if="{hash == \'#home\'}"></home><kappa if="{hash == \'#kappa\'}"></kappa><blog if="{hash == \'#blog\'}"></blog></div><footer></footer>', '', '', function(opts) {
+riot.tag2('content', '<div id="content" class="flex"><home if="{hash == \'#home\'}"></home><kappa if="{hash == \'#kappa\'}"></kappa></div><footer></footer>', '', '', function(opts) {
 var handleHashes, item, j, len, ref, self, setContentHeight;
 
 self = this;
