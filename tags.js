@@ -1,4 +1,4 @@
-riot.tag2('blog', '<div a href="http://blog.arkham.io"></div>')
+riot.tag2('blog', '<a href="http://blog.arkham.io"></a>')
 
 riot.tag2('content', '<div id="content" class="flex"><home if="{hash == \'#home\'}"></home><kappa if="{hash == \'#kappa\'}"></kappa></div><footer></footer>', '', '', function(opts) {
 var handleHashes, item, j, len, ref, self, setContentHeight;
